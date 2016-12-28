@@ -8,7 +8,7 @@ public class Film {
 
     // Basic film data manipulation class
     // Contains basic information on the film
-    //prova232342
+    //prova2
 
     private long id;
     private String title;
