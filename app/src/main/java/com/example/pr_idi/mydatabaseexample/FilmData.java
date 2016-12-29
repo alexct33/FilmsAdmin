@@ -21,11 +21,12 @@ public class FilmData {
     private MySQLiteHelper dbHelper;
 
     // Here we only select Title and Director, must select the appropriate columns
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_DIRECTOR};
+    private String[] allColumns = {MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_COUNTRY, MySQLiteHelper.COLUMN_YEAR_RELEASE, MySQLiteHelper.COLUMN_DIRECTOR, MySQLiteHelper.COLUMN_PROTAGONIST, MySQLiteHelper.COLUMN_CRITICS_RATE};
 
     public FilmData(Context context) {
         dbHelper = new MySQLiteHelper(context);
+
     }
 
     public void open() throws SQLException {
@@ -34,6 +35,17 @@ public class FilmData {
 
     public void close() {
         dbHelper.close();
+    }
+
+    public void firstInserts() {
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_TITLE, "La vida de Brian");
+        values.put(MySQLiteHelper.COLUMN_COUNTRY, "U.K.");
+        values.put(MySQLiteHelper.COLUMN_YEAR_RELEASE, 1979);
+        values.put(MySQLiteHelper.COLUMN_DIRECTOR, "Terry Jones");
+        values.put(MySQLiteHelper.COLUMN_PROTAGONIST, "Brian Cohen");
+        values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, 7);
+        long insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
     }
 
     public Film createFilm(String title, String director) {
@@ -119,7 +131,11 @@ public class FilmData {
         Film film = new Film();
         film.setId(cursor.getLong(0));
         film.setTitle(cursor.getString(1));
-        film.setDirector(cursor.getString(2));
+        film.setCountry(cursor.getString(2));
+        film.setYear(cursor.getInt(3));
+        film.setDirector(cursor.getString(4));
+        film.setProtagonist(cursor.getString(5));
+        film.setCritics_rate(cursor.getInt(6));
         return film;
     }
 }

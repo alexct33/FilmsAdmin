@@ -21,7 +21,7 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(MainActivity.this, DrawerActivity.class);
         startActivity(intent);
         finish();
-        filmData = new FilmData(this);
+        /*filmData = new FilmData(this);
         filmData.open();
 
         List<Film> values = filmData.getAllFilms();
@@ -68,6 +68,7 @@ public class MainActivity extends ListActivity {
     protected void onPause() {
         filmData.close();
         super.onPause();
+    */
     }
 
 }
