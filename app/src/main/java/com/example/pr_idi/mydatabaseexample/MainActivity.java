@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,9 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        Intent intent = new Intent(MainActivity.this, DrawerActivity.class);
+        startActivity(intent);
+        finish();
         filmData = new FilmData(this);
         filmData.open();
 
