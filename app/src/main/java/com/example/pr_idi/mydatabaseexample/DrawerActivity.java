@@ -25,6 +25,11 @@ public class DrawerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        TitleFilterActivity fragment = new TitleFilterActivity();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,10 +88,10 @@ public class DrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.TitleFilter) {
-            TitleFilterActivity fragment = new TitleFilterActivity();
+           /* TitleFilterActivity fragment = new TitleFilterActivity();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.content_drawer, fragment);
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
