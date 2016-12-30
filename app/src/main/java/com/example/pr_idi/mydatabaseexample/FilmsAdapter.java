@@ -1,62 +1,57 @@
 package com.example.pr_idi.mydatabaseexample;
 
-import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
 
 import java.util.List;
 
-/**
- * Created by felixferrercomas on 29/12/16.
- */
 
-public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> {
+public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.NoticiasViewHolder> {
+    private List<Film> items;
 
-    private List<Film> films;
+    public static class NoticiasViewHolder extends RecyclerView.ViewHolder {
+        // Campos respectivos de un item
+        public TextView titulo;
+        public TextView prota;
+        public TextView any;
 
-    public FilmsAdapter(List<Film> films) {
-        this.films = films;
+        public NoticiasViewHolder(View v) {
+
+            super(v);
+            //imagen = (ImageView) v.findViewById(R.id.imagen);
+            titulo = (TextView) v.findViewById(R.id.titulo);
+            prota = (TextView) v.findViewById(R.id.protagonista);
+            any = (TextView) v.findViewById(R.id.any);
+        }
     }
 
-
-    @Override
-    public FilmsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater
-                .from(parent.getContext()).inflate(R.layout.cardview_film, parent, false);
-
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
-
-    }
-
-    @Override
-    public void onBindViewHolder(FilmsAdapter.ViewHolder holder, final int position){
-        holder.titol_film.setText(films.get(position).getTitle());
-        holder.atrib_film.setText(films.get(position).getYear());
+    public FilmsAdapter(List<Film> items) {
+        this.items = items;
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
+    @Override
+    public NoticiasViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.cardview_film, viewGroup, false);
+        return new NoticiasViewHolder(v);
+    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        CardView filmCardView;
-        TextView titol_film, atrib_film;
-        Button eliminar;
-        public ViewHolder(View itemView) {
-            super(itemView);
-            filmCardView = (CardView) itemView.findViewById(R.id.filmCardView);
-            titol_film = (TextView) itemView.findViewById(R.id.titol_film);
-            atrib_film = (TextView) itemView.findViewById(R.id.atribut_film);
-            eliminar = (Button) itemView.findViewById(R.id.del_button);
-        }
+    @Override
+    public void onBindViewHolder(NoticiasViewHolder viewHolder, int i) {
+        //viewHolder.imagen.setImageResource(items.get(i).getPhotoId());
+        viewHolder.titulo.setText(items.get(i).getTitle());
+        viewHolder.prota.setText(items.get(i).getProtagonist());
+        viewHolder.any.setText(String.valueOf(items.get(i).getYear()));
+
+
     }
 }

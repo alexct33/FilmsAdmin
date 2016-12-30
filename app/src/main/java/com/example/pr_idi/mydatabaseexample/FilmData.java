@@ -40,12 +40,78 @@ public class FilmData {
     public void firstInserts() {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_TITLE, "La vida de Brian");
+        boolean exists = existsFilm(values);
         values.put(MySQLiteHelper.COLUMN_COUNTRY, "U.K.");
         values.put(MySQLiteHelper.COLUMN_YEAR_RELEASE, 1979);
         values.put(MySQLiteHelper.COLUMN_DIRECTOR, "Terry Jones");
         values.put(MySQLiteHelper.COLUMN_PROTAGONIST, "Brian Cohen");
         values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, 7);
-        long insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
+
+
+        //database.delete("films", "title= 'La vida de Brian'",null);
+        //database.delete("films", "title= 'El padrino'",null);
+
+        long insertID;
+        if (!exists) insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
+
+        values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_TITLE, "El padrino");
+        exists = existsFilm(values);
+        values.put(MySQLiteHelper.COLUMN_COUNTRY, "E.E.U.U.");
+        values.put(MySQLiteHelper.COLUMN_YEAR_RELEASE, 1972);
+        values.put(MySQLiteHelper.COLUMN_DIRECTOR, "Francis Ford Coppola");
+        values.put(MySQLiteHelper.COLUMN_PROTAGONIST, "Vito Corleone");
+        values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, 9);
+
+
+        //database.delete("films", "title= 'La vida de Brian'",null);
+
+        if (!exists) insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
+
+
+        values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_TITLE, "Pulp Fiction");
+        exists = existsFilm(values);
+        values.put(MySQLiteHelper.COLUMN_COUNTRY, "E.E.U.U.");
+        values.put(MySQLiteHelper.COLUMN_YEAR_RELEASE, 1994);
+        values.put(MySQLiteHelper.COLUMN_DIRECTOR, "Quentin Tarantino");
+        values.put(MySQLiteHelper.COLUMN_PROTAGONIST, "Vincent Vega");
+        values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, 9);
+
+
+        //database.delete("films", "title= 'La vida de Brian'",null);
+
+        if (!exists) insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
+
+
+        values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_TITLE, "Titanic");
+        exists = existsFilm(values);
+        values.put(MySQLiteHelper.COLUMN_COUNTRY, "E.E.U.U.");
+        values.put(MySQLiteHelper.COLUMN_YEAR_RELEASE, 1997);
+        values.put(MySQLiteHelper.COLUMN_DIRECTOR, "James Cameron");
+        values.put(MySQLiteHelper.COLUMN_PROTAGONIST, "Jack Dawson");
+        values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, 10);
+
+
+        //database.delete("films", "title= 'La vida de Brian'",null);
+
+        if (!exists) insertID = database.insert(MySQLiteHelper.TABLE_FILMS, null, values);
+
+
+
+    }
+
+    public boolean existsFilm(ContentValues values){
+        List<Film> films = new ArrayList<>();
+        films = getAllFilms();
+        boolean peliExistent = false;
+        for (int i = 0; i < films.size(); ++i) {
+            String title = "title=" + films.get(i).getTitle();
+            if (title.equals(values.toString()))
+                peliExistent = true;
+        }
+        return peliExistent;
     }
 
     public Film createFilm(String title, String director) {
