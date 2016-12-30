@@ -176,6 +176,23 @@ public class FilmData {
         return comments;
     }
 
+    public List<Film> getFilmsByActor(String actor) {
+        List<Film> comments = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_FILMS,
+                allColumns, MySQLiteHelper.COLUMN_PROTAGONIST+" = ?", new String[]{actor}, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Film comment = cursorToFilm(cursor);
+            comments.add(comment);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return comments;
+    }
+
     public List<Film> getFilmsBy(String filtro) {
         List<Film> comments = new ArrayList<>();
 
