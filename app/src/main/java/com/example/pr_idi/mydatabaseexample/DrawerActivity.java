@@ -24,7 +24,10 @@ public class DrawerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("id", null);
         TitleFilterActivity fragment = new TitleFilterActivity();
+        fragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
@@ -87,11 +90,29 @@ public class DrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.TitleFilter) {
-
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+            Bundle bundle = new Bundle();
+            bundle.putString("id", String.valueOf(id));
+            TitleFilterActivity fragment = new TitleFilterActivity();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.Cerca_actor) {
+            Bundle bundle = new Bundle();
+            bundle.putString("id", null);
+            TitleFilterActivity fragment = new TitleFilterActivity();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+        } else if (id == R.id.AnyFilter) {
+            Bundle bundle = new Bundle();
+            bundle.putString("id", null);
+            TitleFilterActivity fragment = new TitleFilterActivity();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

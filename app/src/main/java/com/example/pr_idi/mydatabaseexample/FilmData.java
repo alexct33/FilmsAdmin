@@ -221,4 +221,21 @@ public class FilmData {
         film.setCritics_rate(cursor.getInt(6));
         return film;
     }
+
+    public List<Film> getFilmsByTitle(String text) {
+        List<Film> comments = new ArrayList<>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_FILMS,
+                allColumns, MySQLiteHelper.COLUMN_TITLE + " = ?", new String[]{text}, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Film comment = cursorToFilm(cursor);
+            comments.add(comment);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return comments;
+    }
 }

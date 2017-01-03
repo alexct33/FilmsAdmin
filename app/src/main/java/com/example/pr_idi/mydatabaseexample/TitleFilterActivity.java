@@ -11,14 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +34,14 @@ public class TitleFilterActivity extends Fragment {
     private Spinner actorSpinner;
     private List<String> actors = new ArrayList<String>();
     private String actorEscollit;
+    private String id_vista_actual;
+    private TextView cerca_actor;
+    private TextView input_cerca_titol;
+    private Button btn_cercar;
+    private boolean title_entered;
+    private String titulo_entrado;
+    private LinearLayout lltitle;
+
 
     public TitleFilterActivity() {
         // Required empty public constructor
@@ -52,9 +60,29 @@ public class TitleFilterActivity extends Fragment {
         recycler.setLayoutManager(lManager);
         filmData = new FilmData(rootView.getContext());
 
+        cerca_actor = (TextView) rootView.findViewById(R.id.text_cerca_actor);
+        input_cerca_titol = (TextView) rootView.findViewById(R.id.et_cerca_titol);
+        btn_cercar = (Button) rootView.findViewById(R.id.btn_Cercar);
+        lltitle = (LinearLayout) rootView.findViewById(R.id.llTitle);
+        title_entered = false;
+
+
+        id_vista_actual = getArguments().getString("id");
+
         //SPINNER PER FILTRAR PER ACTOR/ACTRIU
         actorSpinner = (Spinner) rootView.findViewById(R.id.actorSpinner);
-
+        if (id_vista_actual == "TitleFilter") {
+            actorSpinner.setVisibility(View.GONE);
+            cerca_actor.setVisibility(View.GONE);
+            input_cerca_titol.setVisibility(View.VISIBLE);
+            btn_cercar.setVisibility(View.VISIBLE);
+        }
+        else  {
+            actorSpinner.setVisibility(View.VISIBLE);
+            cerca_actor.setVisibility(View.VISIBLE);
+            input_cerca_titol.setVisibility(View.GONE);
+            btn_cercar.setVisibility(View.GONE);
+        }
         actorEscollit = null;
         //----------------------
         new LoadAdapter().execute("");
@@ -71,13 +99,22 @@ public class TitleFilterActivity extends Fragment {
             filmData.open();
             filmData.firstInserts();
 
-             if (actorEscollit == null || actorEscollit == "Tots") {
-                 lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_TITLE);
-             }
+
+            if (id_vista_actual == "TitleFilter"){
+                lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_TITLE);
+                 if (title_entered) lista_films = filmData.getFilmsByTitle(titulo_entrado);
+            }
+            else if (id_vista_actual == "AnyFilter") {
+                lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_YEAR_RELEASE);
+            }
+            else if (actorEscollit == null || actorEscollit == "Tots") {
+                lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_TITLE);
+            }
             else {
                  lista_films = filmData.getFilmsByActor(actorEscollit);
              }
 
+            title_entered = false;
 
             //----------------------
             // Crear un nuevo adaptador
@@ -113,6 +150,17 @@ public class TitleFilterActivity extends Fragment {
                 @Override
                 public void onNothingSelected(AdapterView<?> arg0) {
                     actorEscollit = null;
+
+                }
+            });
+
+            btn_cercar.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    titulo_entrado = String.valueOf(input_cerca_titol.getText());
+                    if (titulo_entrado != null || titulo_entrado != "Cercar per títol...") title_entered = true;
+                    doInBackground();
+                    recycler.setAdapter(adapter);
 
                 }
             });

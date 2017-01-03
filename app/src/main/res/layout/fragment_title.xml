@@ -8,10 +8,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/llTitle">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/text_cerca_actor"
                     android:text="Cercar per actor/actriu: "
                     android:layout_marginLeft="20dp"/>
 
@@ -22,6 +25,21 @@
                     android:id="@+id/actorSpinner">
 
                 </Spinner>
+
+                <EditText
+                    android:layout_width="275dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/et_cerca_titol"
+                    android:hint="Cercar per títol..."
+                    android:inputType="text"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_Cercar"
+                    android:text="Cercar"
+                    android:visibility="gone"/>
 
 
         </LinearLayout>
