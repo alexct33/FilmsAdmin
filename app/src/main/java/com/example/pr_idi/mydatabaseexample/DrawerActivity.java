@@ -133,15 +133,15 @@ public class DrawerActivity extends AppCompatActivity
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+            super.onActivityResult(requestCode, resultCode, data);
 
-        Bundle bundle = new Bundle();
-        bundle.putString("id", String.valueOf(estado));
-        TitleFilterActivity fragment = new TitleFilterActivity();
-        fragment.setArguments(bundle);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
+            Bundle bundle = new Bundle();
+            bundle.putString("id", String.valueOf(estado));
+            TitleFilterActivity fragment = new TitleFilterActivity();
+            fragment.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
     }
 }

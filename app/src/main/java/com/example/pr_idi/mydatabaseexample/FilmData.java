@@ -24,6 +24,7 @@ public class FilmData {
     private String[] allColumns = {MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_TITLE, MySQLiteHelper.COLUMN_COUNTRY, MySQLiteHelper.COLUMN_YEAR_RELEASE, MySQLiteHelper.COLUMN_DIRECTOR, MySQLiteHelper.COLUMN_PROTAGONIST, MySQLiteHelper.COLUMN_CRITICS_RATE};
 
+
     public FilmData(Context context) {
         dbHelper = new MySQLiteHelper(context);
 
@@ -235,5 +236,21 @@ public class FilmData {
         // make sure to close the cursor
         cursor.close();
         return comments;
+    }
+
+    public boolean modificar_nota(int nueva_nota, String nombre) {
+        ContentValues valor = new ContentValues();
+        valor.put(MySQLiteHelper.COLUMN_CRITICS_RATE, nueva_nota);
+        database.update(MySQLiteHelper.TABLE_FILMS, valor, MySQLiteHelper.COLUMN_TITLE + " = ?", new String[]{nombre});
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_FILMS,
+                allColumns, MySQLiteHelper.COLUMN_TITLE+" = ?", new String[]{nombre}, null, null, null);
+        int nota_act = 11;
+        cursor.moveToFirst();
+        if (!cursor.isAfterLast())
+            nota_act = cursor.getInt(6);
+        cursor.close();
+        if (nota_act != nueva_nota) return false;
+        else return true;
     }
 }

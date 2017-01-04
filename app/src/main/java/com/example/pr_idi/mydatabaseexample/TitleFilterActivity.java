@@ -1,6 +1,8 @@
 package com.example.pr_idi.mydatabaseexample;
 
 
+import android.content.ContentValues;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -186,10 +188,20 @@ public class TitleFilterActivity extends Fragment {
                     new RecyclerItemClickListener(rootView.getContext(), new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-                            Toast.makeText(view.getContext(), lista_films.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(view.getContext(), lista_films.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), bioFilmActivity.class);
+                            intent.putExtra("title", lista_films.get(position).getTitle());
+                            intent.putExtra("year", lista_films.get(position).getYear());
+                            intent.putExtra("country", lista_films.get(position).getCountry());
+                            intent.putExtra("director", lista_films.get(position).getDirector());
+                            intent.putExtra("prota", lista_films.get(position).getProtagonist());
+                            intent.putExtra("nota", lista_films.get(position).getCritics_rate());
+                            startActivityForResult(intent,0);
                         }
                     })
             );
         }
     }
+
+
 }
