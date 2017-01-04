@@ -4,32 +4,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/TitleFilter"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_search_black_24dp"
             android:title="Cerca per títol" />
         <item
             android:id="@+id/Cerca_actor"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_face_black_24dp"
             android:title="Filtre per actor" />
         <item
             android:id="@+id/AnyFilter"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_event_black_24dp"
             android:title="Ordenació per any" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Altres">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help_black_24dp"
+                android:title="Ajuda" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/about"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="About" />
         </menu>
     </item>
 

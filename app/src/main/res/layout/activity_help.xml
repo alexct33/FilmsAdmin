@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_help"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pr_idi.mydatabaseexample.helpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vista principal:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ofereix un llistat de totes les pel·lícules que conté l’aplicació, ordenades alfabéticament per títol.
+Cerca per actor/actriu: permet filtrar les pel·lícules a partir de l’actor/actriu seleccionat al menú desplegable de la part superior." />
+
+            <View
+                android:id="@+id/linea"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:background="#ffd5d5d5"></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opcions del menú:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Cerca per títol: ofereix una llista de totes les pel·lícules que conté l’aplicació, ordenades alfabéticament per títol. A la part superior hi ha un quadre de text on es pot introduïr el nom de la pel·lícula que es vol cercar. Cal tenir en compte que es distingeix entre majúscules i minúscules." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Filtre per actor: Ofereix un llistat de totes les pel·lícules que conté l’aplicació, ordenades alfabéticament per títol. Permet filtrar les pel·lícules a partir de l’actor/actriu seleccionat al menú desplegable de la part superior." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordenació per any: Ofereix un llistat de totes les pel·lícules que conté l’aplicació, ordenades per any d’estrena." />
+            "/>
+
+            <View
+                android:id="@+id/linea2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:background="#ffd5d5d5"></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Les pel·lícules que apareixen llistades es poden eliminar clicant sobre la imatge de la paperera." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Per accedir a la informació completa de cada pel·lícula, només cal clicar sobre cadascuna d’elles." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="De la informació de cada pel·lícula se’n pot modificar la nota, escrivint directament sobre la casella per puntuar i clicant el botó “Puntuar”." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="En qualsevol moment es pot afegir una nova pel·lícula clicant al botó flotant que apareix sempre a la part inferior dreta de la pantalla." />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

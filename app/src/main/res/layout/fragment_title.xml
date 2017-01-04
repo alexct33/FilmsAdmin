@@ -16,6 +16,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/text_cerca_actor"
                     android:text="Cercar per actor/actriu: "
+                    android:textColor="@color/colorPrimaryDark"
                     android:layout_marginLeft="20dp"/>
 
                 <Spinner
@@ -40,6 +41,14 @@
                     android:id="@+id/btn_Cercar"
                     android:text="Cercar"
                     android:visibility="gone"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/oredna_any"
+                    android:text="Ordenació per any: "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginLeft="20dp"/>
 
 
         </LinearLayout>

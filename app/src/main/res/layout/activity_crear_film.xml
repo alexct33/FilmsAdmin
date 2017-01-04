@@ -16,6 +16,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvTitol"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
         />
 
     <EditText
@@ -38,6 +39,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvPais"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
+
         />
 
     <EditText
@@ -61,6 +64,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvAny"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
+
         />
 
     <EditText
@@ -83,6 +88,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvDirector"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
+
         />
 
     <EditText
@@ -105,6 +112,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvProta"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
+
         />
 
     <EditText
@@ -127,6 +136,8 @@
         android:layout_marginTop="20dp"
         android:id="@+id/tvNota"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorPrimaryDark"
+
         />
 
     <EditText
@@ -147,6 +158,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:id="@+id/btn_afegirFilm"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFF"
         android:text="Afegir"/>
 
 

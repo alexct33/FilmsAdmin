@@ -43,6 +43,7 @@ public class TitleFilterActivity extends Fragment {
     private Button btn_cercar;
     private boolean title_entered;
     private String titulo_entrado;
+    private TextView ordena_any;
     private LinearLayout lltitle;
 
 
@@ -67,6 +68,7 @@ public class TitleFilterActivity extends Fragment {
         input_cerca_titol = (TextView) rootView.findViewById(R.id.et_cerca_titol);
         btn_cercar = (Button) rootView.findViewById(R.id.btn_Cercar);
         lltitle = (LinearLayout) rootView.findViewById(R.id.llTitle);
+        ordena_any = (TextView) rootView.findViewById(R.id.oredna_any);
         title_entered = false;
 
 
@@ -79,18 +81,21 @@ public class TitleFilterActivity extends Fragment {
             cerca_actor.setVisibility(View.GONE);
             input_cerca_titol.setVisibility(View.VISIBLE);
             btn_cercar.setVisibility(View.VISIBLE);
+            ordena_any.setVisibility(View.GONE);
         }
         else if( id_vista_actual.equals(String.valueOf(R.id.AnyFilter))) {
             actorSpinner.setVisibility(View.GONE);
             cerca_actor.setVisibility(View.GONE);
             input_cerca_titol.setVisibility(View.GONE);
-            btn_cercar.setVisibility(View.VISIBLE);
+            btn_cercar.setVisibility(View.GONE);
+            ordena_any.setVisibility(View.VISIBLE);
         }
         else  {
             actorSpinner.setVisibility(View.VISIBLE);
             cerca_actor.setVisibility(View.VISIBLE);
             input_cerca_titol.setVisibility(View.GONE);
             btn_cercar.setVisibility(View.GONE);
+            ordena_any.setVisibility(View.GONE);
         }
         actorEscollit = null;
         //----------------------

@@ -24,8 +24,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.pr_idi.mydatabaseexample.MainActivity" />
         </activity>
-        <activity android:name=".crearFilmActivity" />
-        <activity android:name=".bioFilmActivity"></activity>
+        <activity android:name=".crearFilmActivity"
+            android:label="Afegir Pel·lícula"/>
+        <activity android:name=".bioFilmActivity"
+            android:label="Pel·lícula"/>
+
     </application>
 
 </manifest>

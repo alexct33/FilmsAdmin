@@ -39,6 +39,8 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="País"
+            android:textColor="@color/colorPrimaryDark"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
         <TextView
             android:id="@+id/tvBioPais"
@@ -54,6 +56,8 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="Any d'estrena"
+            android:textColor="@color/colorPrimaryDark"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
         <TextView
             android:id="@+id/tvBioAny"
@@ -69,6 +73,8 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="Director"
+            android:textColor="@color/colorPrimaryDark"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
         <TextView
             android:id="@+id/tvBioDirector"
@@ -84,6 +90,8 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="Protagonista"
+            android:textColor="@color/colorPrimaryDark"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
         <TextView
             android:id="@+id/tvBioProta"
@@ -99,17 +107,25 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="Puntúa!"
+            android:textColor="@color/colorPrimaryDark"
+
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Introdueix una puntuació entre 0 i 10"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"/>
             <EditText
                 android:id="@+id/tvNota"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="20dp"
+                android:inputType="number"
                 android:text="Any d'estrena" />
             <Button
                 android:layout_width="wrap_content"
@@ -117,9 +133,14 @@
                 android:layout_gravity="bottom"
                 android:text="Puntuar"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FFFF"
                 android:id="@+id/btn_puntuar"
+                android:layout_alignParentRight="true"
                 />
-        </LinearLayout>
+        </RelativeLayout>
 
 
 
