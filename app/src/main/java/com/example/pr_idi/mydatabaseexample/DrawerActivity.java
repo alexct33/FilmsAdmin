@@ -1,5 +1,6 @@
 package com.example.pr_idi.mydatabaseexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener  {
+    int estado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,19 +27,22 @@ public class DrawerActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Bundle bundle = new Bundle();
-        bundle.putString("id", null);
+        bundle.putString("id", String.valueOf(R.id.Cerca_actor));
         TitleFilterActivity fragment = new TitleFilterActivity();
         fragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 
+        final int result = 0;
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = new Intent(DrawerActivity.this, crearFilmActivity.class);
+                startActivityForResult(intent, result );
             }
         });
 
@@ -88,7 +93,7 @@ public class DrawerActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        estado = id;
         if (id == R.id.TitleFilter) {
             Bundle bundle = new Bundle();
             bundle.putString("id", String.valueOf(id));
@@ -99,7 +104,7 @@ public class DrawerActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.Cerca_actor) {
             Bundle bundle = new Bundle();
-            bundle.putString("id", null);
+            bundle.putString("id", String.valueOf(id));
             TitleFilterActivity fragment = new TitleFilterActivity();
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -107,7 +112,7 @@ public class DrawerActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.AnyFilter) {
             Bundle bundle = new Bundle();
-            bundle.putString("id", null);
+            bundle.putString("id", String.valueOf(id));
             TitleFilterActivity fragment = new TitleFilterActivity();
             fragment.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -124,5 +129,19 @@ public class DrawerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("id", String.valueOf(estado));
+        TitleFilterActivity fragment = new TitleFilterActivity();
+        fragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+
     }
 }

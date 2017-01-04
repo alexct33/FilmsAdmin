@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ActionMenuView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -71,10 +72,16 @@ public class TitleFilterActivity extends Fragment {
 
         //SPINNER PER FILTRAR PER ACTOR/ACTRIU
         actorSpinner = (Spinner) rootView.findViewById(R.id.actorSpinner);
-        if (id_vista_actual == "TitleFilter") {
+        if (id_vista_actual.equals(String.valueOf(R.id.TitleFilter))) {
             actorSpinner.setVisibility(View.GONE);
             cerca_actor.setVisibility(View.GONE);
             input_cerca_titol.setVisibility(View.VISIBLE);
+            btn_cercar.setVisibility(View.VISIBLE);
+        }
+        else if( id_vista_actual.equals(String.valueOf(R.id.AnyFilter))) {
+            actorSpinner.setVisibility(View.GONE);
+            cerca_actor.setVisibility(View.GONE);
+            input_cerca_titol.setVisibility(View.GONE);
             btn_cercar.setVisibility(View.VISIBLE);
         }
         else  {
@@ -97,14 +104,14 @@ public class TitleFilterActivity extends Fragment {
 
 
             filmData.open();
-            filmData.firstInserts();
+            //filmData.firstInserts();
 
 
-            if (id_vista_actual == "TitleFilter"){
+            if (id_vista_actual.equals(String.valueOf(R.id.TitleFilter))) {
                 lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_TITLE);
                  if (title_entered) lista_films = filmData.getFilmsByTitle(titulo_entrado);
             }
-            else if (id_vista_actual == "AnyFilter") {
+            else if (id_vista_actual.equals(String.valueOf(R.id.AnyFilter))) {
                 lista_films = filmData.getFilmsBy(MySQLiteHelper.COLUMN_YEAR_RELEASE);
             }
             else if (actorEscollit == null || actorEscollit == "Tots") {
@@ -129,8 +136,13 @@ public class TitleFilterActivity extends Fragment {
             recycler.setHasFixedSize(true);
             filmData = new FilmData(rootView.getContext());
             actors.add("Tots");
+            boolean igual = false;
             for (int i= 0; i<lista_films.size(); ++i ) {
-                actors.add(lista_films.get(i).getProtagonist());
+                igual = false;
+                for (int j = 0; j < actors.size(); ++j)
+                    if (actors.get(j).equals(lista_films.get(i).getProtagonist()))
+                        igual = true;
+                if (!igual) actors.add(lista_films.get(i).getProtagonist());
             }
 
             final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, actors);

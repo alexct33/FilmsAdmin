@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_crear_film"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pr_idi.mydatabaseexample.crearFilmActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Títol:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvTitol"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/etTitol"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix el títol de la pel·lícula..."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="País:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvPais"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/etPais"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix el país de la pel·lícula..."/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Any d'estrena:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvAny"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/etAny"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix l'any d'estrena de la pel·lícula..."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Director:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvDirector"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/etDirector"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix el director de la pel·lícula..."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Protagonista:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvProta"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/etProtagonista"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix el protagonista de la pel·lícula..."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nota crítica:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvNota"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/etNota"
+        android:textSize="15sp"
+        android:focusable="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="#222222"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:padding="5dp"
+        android:hint="Introdueix la nota de la pel·lícula..."/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/btn_afegirFilm"
+        android:text="Afegir"/>
+
+
+</LinearLayout>
