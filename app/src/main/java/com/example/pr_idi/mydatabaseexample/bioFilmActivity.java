@@ -50,8 +50,14 @@ public class bioFilmActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast toast;
                 database.open();
-                boolean modificat = database.modificar_nota(Integer.valueOf(String.valueOf(Nota.getText())), Titol.getText().toString());
+                int nota = Integer.valueOf(String.valueOf(Nota.getText()));
+                boolean modificat = false;
+                if ( nota > 10) Toast.makeText(v.getContext(), "La nota ha de ser un número entre 0 i 10", Toast.LENGTH_SHORT).show();
+                else {
+                    modificat = database.modificar_nota(Integer.valueOf(String.valueOf(Nota.getText())), Titol.getText().toString());
+                }
                 database.close();
+
                 if (!modificat) Toast.makeText(v.getContext(), "La nota NO s'ha modificat correctament", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(v.getContext(), "La nota s'ha modificat correctament", Toast.LENGTH_SHORT).show();
             }
