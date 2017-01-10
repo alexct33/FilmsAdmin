@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class bioFilmActivity extends AppCompatActivity {
 
@@ -21,7 +24,7 @@ public class bioFilmActivity extends AppCompatActivity {
     private EditText Nota;
     private FilmData database;
     private Button btnPuntuar;
-
+    private ImageButton btnEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class bioFilmActivity extends AppCompatActivity {
         Prota = (TextView) findViewById(R.id.tvBioProta);
         Nota = (EditText) findViewById(R.id.tvNota);
         btnPuntuar = (Button) findViewById(R.id.btn_puntuar);
+        btnEliminar = (ImageButton) findViewById(R.id.btn_eliminar);
 
         database = new FilmData(getApplicationContext());
 
@@ -60,6 +64,39 @@ public class bioFilmActivity extends AppCompatActivity {
 
                 if (!modificat) Toast.makeText(v.getContext(), "La nota NO s'ha modificat correctament", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(v.getContext(), "La nota s'ha modificat correctament", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                new AlertDialog.Builder(v.getContext())
+                        .setTitle("Eliminar pel·lícula?")
+                        .setMessage("Segur que vols eliminar la pel·lícula?")
+                        .setPositiveButton("Sí",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                        database.open();
+                                        List<Film> pelis = database.getFilmsByTitle(Titol.getText().toString());
+                                        database.deleteFilm(pelis.get(0));
+                                        database.close();
+                                        /*items.remove(i);
+                                        notifyDataSetChanged();
+                                        notifyItemRemoved(i);
+                                        notifyItemRangeChanged(i, items.size());*/
+                                        Toast.makeText(v.getContext(), "La pelicula s'ha eliminat correctament", Toast.LENGTH_SHORT).show();
+                                        finish();
+                                    }
+                                })
+                        .setNegativeButton("Cancel·la",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                    }
+                                }).show();
             }
         });
 

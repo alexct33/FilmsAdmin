@@ -196,7 +196,7 @@ public class FilmData {
         List<Film> comments = new ArrayList<>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_FILMS,
-                allColumns, null, null, null, null, filtro);
+                allColumns, null, null, null, null, filtro + " COLLATE NOCASE ASC");
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

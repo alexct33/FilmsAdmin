@@ -9,19 +9,29 @@
     tools:context="com.example.pr_idi.mydatabaseexample.bioFilmActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvBioTitol"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:text="Títol"
             android:textSize="30dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <ImageButton
+            android:id="@+id/btn_eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="29dp"
+            android:src="@drawable/ic_cubo_de_basura"
+            android:background="#FFFFFF"
+            android:keepScreenOn="true"/>
 
 
     </LinearLayout>

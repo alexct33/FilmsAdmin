@@ -31,7 +31,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
             titulo = (TextView) v.findViewById(R.id.titulo);
             prota = (TextView) v.findViewById(R.id.protagonista);
             any = (TextView) v.findViewById(R.id.any);
-            eliminar = (ImageButton) v.findViewById(R.id.btn_eliminar);
+            //eliminar = (ImageButton) v.findViewById(R.id.btn_eliminar);
             database = new FilmData(v.getContext());
         }
     }
@@ -60,7 +60,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         viewHolder.titulo.setText(items.get(i).getTitle());
         viewHolder.prota.setText(items.get(i).getProtagonist());
         viewHolder.any.setText(String.valueOf(items.get(i).getYear()));
-        viewHolder.eliminar.setOnClickListener(new View.OnClickListener() {
+        /*viewHolder.eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(v.getContext())
@@ -89,7 +89,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
                                     }
                                 }).show();
             }
-        });
+        });*/
 
     }
 }

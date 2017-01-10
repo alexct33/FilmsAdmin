@@ -33,16 +33,6 @@
                 android:text="Large Text"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <ImageButton
-                android:id="@+id/btn_eliminar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
-                android:background="#CCf29db8"
-                android:src="@drawable/ic_cubo_de_basura"
-                android:keepScreenOn="true"/>
 
         </RelativeLayout>
 
