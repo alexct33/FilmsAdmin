@@ -19,9 +19,12 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -111,7 +114,6 @@ public class TitleFilterActivity extends Fragment {
 
 
             filmData.open();
-            //filmData.firstInserts();
 
 
             if (id_vista_actual.equals(String.valueOf(R.id.TitleFilter))) {

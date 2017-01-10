@@ -18,6 +18,18 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        filmData = new FilmData(getApplicationContext());
+        filmData.open();
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+        if (isFirstRun) filmData.firstInserts();
+
+
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
+
+        filmData.close();
+
         Intent intent = new Intent(MainActivity.this, DrawerActivity.class);
         startActivity(intent);
         finish();
