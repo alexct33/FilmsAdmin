@@ -21,8 +21,6 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         public TextView titulo;
         public TextView prota;
         public TextView any;
-        public ImageButton eliminar;
-        private FilmData database;
 
         public FilmsViewHolder(View v) {
 
@@ -31,8 +29,6 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
             titulo = (TextView) v.findViewById(R.id.titulo);
             prota = (TextView) v.findViewById(R.id.protagonista);
             any = (TextView) v.findViewById(R.id.any);
-            //eliminar = (ImageButton) v.findViewById(R.id.btn_eliminar);
-            database = new FilmData(v.getContext());
         }
     }
 
@@ -60,36 +56,6 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         viewHolder.titulo.setText(items.get(i).getTitle());
         viewHolder.prota.setText(items.get(i).getProtagonist());
         viewHolder.any.setText(String.valueOf(items.get(i).getYear()));
-        /*viewHolder.eliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(v.getContext())
-                        .setTitle("Eliminar pel·lícula?")
-                        .setMessage("Segur que vols eliminar la pel·lícula?")
-                        .setPositiveButton("Sí",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog,
-                                                        int which) {
-                                        viewHolder.database.open();
-                                        List<Film> pelis = viewHolder.database.getFilmsByTitle(items.get(i).getTitle());
-                                        viewHolder.database.deleteFilm(pelis.get(0));
-                                        viewHolder.database.close();
-                                        items.remove(i);
-                                        notifyDataSetChanged();
-                                        notifyItemRemoved(i);
-                                        notifyItemRangeChanged(i, items.size());
-                                    }
-                                })
-                        .setNegativeButton("Cancel·la",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog,
-                                                        int which) {
-                                    }
-                                }).show();
-            }
-        });*/
 
     }
 }
