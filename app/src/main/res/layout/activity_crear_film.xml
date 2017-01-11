@@ -79,7 +79,8 @@
         android:textColorHint="#222222"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
-        android:hint="Introdueix l'any d'estrena de la pel·lícula..."/>
+        android:hint="Introdueix l'any d'estrena de la pel·lícula..."
+        android:maxLength="4"/>
 
     <TextView
         android:layout_width="match_parent"

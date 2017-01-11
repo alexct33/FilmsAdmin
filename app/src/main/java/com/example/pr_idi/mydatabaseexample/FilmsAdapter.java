@@ -21,6 +21,9 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         public TextView titulo;
         public TextView prota;
         public TextView any;
+        public TextView director;
+        public TextView nota;
+        public TextView pais;
 
         public FilmsViewHolder(View v) {
 
@@ -29,6 +32,9 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
             titulo = (TextView) v.findViewById(R.id.titulo);
             prota = (TextView) v.findViewById(R.id.protagonista);
             any = (TextView) v.findViewById(R.id.any);
+            director = (TextView) v.findViewById(R.id.director);
+            nota = (TextView) v.findViewById(R.id.nota);
+            pais = (TextView) v.findViewById(R.id.pais);
         }
     }
 
@@ -56,6 +62,9 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         viewHolder.titulo.setText(items.get(i).getTitle());
         viewHolder.prota.setText(items.get(i).getProtagonist());
         viewHolder.any.setText(String.valueOf(items.get(i).getYear()));
+        viewHolder.director.setText("Directed by: " + items.get(i).getDirector());
+        viewHolder.nota.setText(items.get(i).getCritics_rate() + "/10");
+        viewHolder.pais.setText(items.get(i).getCountry());
 
     }
 }

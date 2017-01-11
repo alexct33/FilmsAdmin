@@ -45,6 +45,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/btn_Cercar"
                             android:text="Cercar"
+                            android:textColor="#FFFFFF"
                             android:background="@color/colorPrimaryDark"
                             android:visibility="gone"/>
 

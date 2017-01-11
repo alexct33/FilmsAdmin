@@ -57,15 +57,16 @@ public class crearFilmActivity extends AppCompatActivity {
     private class LoadAdapter extends AsyncTask<String, Integer, String> {
         private boolean creatOK;
         private boolean camps_buits;
-
+        private boolean nota_erronea;
         @Override
         protected String doInBackground(String... content) {
-            creatOK = camps_buits = false;
+            creatOK = camps_buits = nota_erronea = false;
             actualitzar_et();
             if (titol.isEmpty() || pais.isEmpty() || any.isEmpty()
                     || director.isEmpty() || prota.isEmpty() || nota.isEmpty()) {
                 camps_buits = true;
             }
+            else if (Integer.parseInt(nota) > 10) nota_erronea = true;
             else {
                 filmData.open();
                 Film peli = filmData.createFilm(titol, pais, Integer.parseInt(any), director, prota, Integer.parseInt(nota));
@@ -86,7 +87,11 @@ public class crearFilmActivity extends AppCompatActivity {
                 toast = Toast.makeText(getApplicationContext(), "La pel·lícula s'ha afegit correctament", Toast.LENGTH_LONG);
                 finish();
             }
+            else if (nota_erronea)
+                toast = Toast.makeText(getApplicationContext(), "La nota ha de ser un número entre 0 i 10", Toast.LENGTH_SHORT);
+
             else toast = Toast.makeText(getApplicationContext(), "La pel·lícula NO s'ha afegit correctament", Toast.LENGTH_LONG);
+
             toast.show();
         }
     }
