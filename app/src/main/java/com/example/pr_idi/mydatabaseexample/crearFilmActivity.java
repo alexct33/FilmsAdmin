@@ -58,9 +58,10 @@ public class crearFilmActivity extends AppCompatActivity {
         private boolean creatOK;
         private boolean camps_buits;
         private boolean nota_erronea;
+        private boolean peli_existent;
         @Override
         protected String doInBackground(String... content) {
-            creatOK = camps_buits = nota_erronea = false;
+            creatOK = camps_buits = nota_erronea = peli_existent =false;
             actualitzar_et();
             if (titol.isEmpty() || pais.isEmpty() || any.isEmpty()
                     || director.isEmpty() || prota.isEmpty() || nota.isEmpty()) {
@@ -70,7 +71,8 @@ public class crearFilmActivity extends AppCompatActivity {
             else {
                 filmData.open();
                 Film peli = filmData.createFilm(titol, pais, Integer.parseInt(any), director, prota, Integer.parseInt(nota));
-                if (peli.getTitle().equals(titol)) creatOK = true;
+                if (peli == null) peli_existent = true;
+                else if (peli.getTitle().equals(titol)) creatOK = true;
                 //----------------------
                 filmData.close();
             }
@@ -89,6 +91,8 @@ public class crearFilmActivity extends AppCompatActivity {
             }
             else if (nota_erronea)
                 toast = Toast.makeText(getApplicationContext(), "La nota ha de ser un número entre 0 i 10", Toast.LENGTH_SHORT);
+            else if (peli_existent)
+                toast = Toast.makeText(getApplicationContext(), "Ja existeix una pel·lícula amb aquest títol", Toast.LENGTH_SHORT);
 
             else toast = Toast.makeText(getApplicationContext(), "La pel·lícula NO s'ha afegit correctament", Toast.LENGTH_LONG);
 

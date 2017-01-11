@@ -128,6 +128,8 @@ public class FilmData {
         values.put(MySQLiteHelper.COLUMN_PROTAGONIST, prota);
         values.put(MySQLiteHelper.COLUMN_CRITICS_RATE, nota);
 
+        List<Film> pelicula = getFilmsByTitle(title);
+        if (!pelicula.isEmpty()) return null;
         // Actual insertion of the data using the values variable
         long insertId = database.insert(MySQLiteHelper.TABLE_FILMS, null,
                 values);
