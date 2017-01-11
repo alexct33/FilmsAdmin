@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -196,6 +197,7 @@ public class TitleFilterActivity extends Fragment {
                         @Override
                         public void onItemClick(View view, int position) {
                             //Toast.makeText(view.getContext(), lista_films.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+
                             Intent intent = new Intent(getActivity(), bioFilmActivity.class);
                             intent.putExtra("title", lista_films.get(position).getTitle());
                             intent.putExtra("year", lista_films.get(position).getYear());

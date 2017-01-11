@@ -27,10 +27,12 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
-        android:hint="Introdueix el títol de la pel·lícula..."/>
+        android:hint="Introdueix el títol de la pel·lícula..."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLength="50"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -51,10 +53,11 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
-        android:hint="Introdueix el país de la pel·lícula..."/>
+        android:hint="Introdueix el país de la pel·lícula..."
+        android:maxLength="50"/>
 
 
     <TextView
@@ -76,7 +79,7 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
         android:hint="Introdueix l'any d'estrena de la pel·lícula..."
@@ -101,10 +104,11 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
-        android:hint="Introdueix el director de la pel·lícula..."/>
+        android:hint="Introdueix el director de la pel·lícula..."
+        android:maxLength="50"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -125,10 +129,11 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
-        android:hint="Introdueix el protagonista de la pel·lícula..."/>
+        android:hint="Introdueix el protagonista de la pel·lícula..."
+        android:maxLength="50"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -149,7 +154,7 @@
         android:textSize="15sp"
         android:focusable="true"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="#222222"
+        android:textColorHint="#808080"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:padding="5dp"
         android:hint="Introdueix la nota de la pel·lícula..."/>

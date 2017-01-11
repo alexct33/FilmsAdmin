@@ -8,149 +8,150 @@
     android:orientation="vertical"
     tools:context="com.example.pr_idi.mydatabaseexample.bioFilmActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvBioTitol"
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Títol"
-            android:textSize="30dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-        <ImageButton
-            android:id="@+id/btn_eliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="29dp"
-            android:src="@drawable/ic_cubo_de_basura"
-            android:background="#FFFFFF"
-            android:keepScreenOn="true"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="País"
-            android:textColor="@color/colorPrimaryDark"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <TextView
-            android:id="@+id/tvBioPais"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Any d'estrena" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Any d'estrena"
-            android:textColor="@color/colorPrimaryDark"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <TextView
-            android:id="@+id/tvBioAny"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Any d'estrena" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Director"
-            android:textColor="@color/colorPrimaryDark"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <TextView
-            android:id="@+id/tvBioDirector"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Any d'estrena" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Protagonista"
-            android:textColor="@color/colorPrimaryDark"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <TextView
-            android:id="@+id/tvBioProta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Any d'estrena" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="20dp"
-            android:text="Puntúa!"
-            android:textColor="@color/colorPrimaryDark"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-        <RelativeLayout
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Introdueix una puntuació entre 0 i 10"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"/>
-            <EditText
-                android:id="@+id/tvNota"
-                android:layout_width="150dp"
+                android:id="@+id/tvBioTitol"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="20dp"
-                android:inputType="number"
-                android:text="Any d'estrena" />
-            <Button
+                android:text="Títol"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <ImageButton
+                android:id="@+id/btn_eliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:text="Puntuar"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="#FFFF"
-                android:id="@+id/btn_puntuar"
                 android:layout_alignParentRight="true"
-                />
-        </RelativeLayout>
+                android:layout_marginTop="29dp"
+                android:src="@drawable/ic_cubo_de_basura"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFF"
+                android:keepScreenOn="true"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="10dp"
+                android:text="País"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle" />
+            <TextView
+                android:id="@+id/tvBioPais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Pais" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Any d'estrena"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle" />
+            <TextView
+                android:id="@+id/tvBioAny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Any d'estrena" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Director"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+            <TextView
+                android:id="@+id/tvBioDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Director" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Protagonista"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+            <TextView
+                android:id="@+id/tvBioProta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Prota" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:text="Puntúa!"
+                android:textColor="@color/colorPrimaryDark"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Introdueix una puntuació entre 0 i 10"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"/>
+                <EditText
+                    android:id="@+id/tvNota"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="20dp"
+                    android:inputType="number"
+                    android:text="Valoració" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="Puntuar"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="#FFFF"
+                    android:id="@+id/btn_puntuar"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
 
 
 
@@ -159,6 +160,7 @@
 
 
     </LinearLayout>
+
 
 
 

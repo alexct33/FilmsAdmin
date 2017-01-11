@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +49,7 @@ public class bioFilmActivity extends AppCompatActivity {
         Director.setText(getIntent().getExtras().getString("director"));
         Prota.setText(getIntent().getExtras().getString("prota"));
         Nota.setText(String.valueOf(getIntent().getExtras().getInt("nota")));
+
 
         btnPuntuar.setOnClickListener(new View.OnClickListener() {
             @Override
